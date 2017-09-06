@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+<script src='jqueryexport.js'></script>
+<style>
+body { background-color:#f7f7f7;}
+.container { margin:150px auto;}
+button { cursor:pointer}
+</style>
+<title>jQuery ExportToExcel Plugin Demos</title>
+</head>
+<body>
+
+<button id='export'  class="btn btn-danger">Export</button>
+<table id="mytable" class="table table-striped">
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>John</td>
+      <td>Doe</td>
+      <td>john@example.com</td>
+    </tr>
+    <tr>
+      <td>Mary</td>
+      <td>Moe</td>
+      <td>mary@example.com</td>
+    </tr>
+    <tr>
+      <td>July</td>
+      <td>Dooley</td>
+      <td>july@example.com</td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+    
+	//assuming you have a json data as above
+	  var data = [{"total":330.17,"prop_name":" RA:3555 PP:1022","guest_email_phone":"swadesse artita(test)|decce.artita@redawning.com|628562900479","book_date":"2017-08-23","rent_fee_tax":"250 / 17 / 63.17 ","end_date":"2017-09-12","start_date":"2017-09-11","campaign_source":"RedAwning","manager_response":"Pending","resId":66566},{"total":484.8,"prop_name":" RA:3559 PP:","guest_email_phone":"swadesse artita(test)|decce.artita@redawning.com|628562900479","book_date":"2017-08-23","rent_fee_tax":"204 / 200 / 80.8 ","end_date":"2017-09-10","start_date":"2017-09-09","campaign_source":"RedAwning","manager_response":"Pending","resId":66565},{"total":1515.6,"prop_name":" RA:3559 PP:","guest_email_phone":"sigit (test) ari (test)|sigit.ari@redawning.com|0859878764","book_date":"2017-08-22","rent_fee_tax":"1063 / 200 / 252.6 ","end_date":"2018-01-08","start_date":"2018-01-06","campaign_source":"RedAwning","manager_response":"Pending","resId":66558},{"total":275.94,"prop_name":" RA:3555 PP:1022","guest_email_phone":"swadesse artita(test)|decce.artita@redawning.com|628562900479","book_date":"2017-08-22","rent_fee_tax":"204 / 17 / 54.94 ","end_date":"2017-09-10","start_date":"2017-09-09","campaign_source":"RedAwning","manager_response":"Pending","resId":66552},{"total":46.68,"prop_name":" RA:3555 PP:1022","guest_email_phone":"NOVI(TEST) NURAINI(TEST)|dev@redawning.com|8887332964","book_date":"2017-08-22","rent_fee_tax":"3 / 17 / 26.68 ","end_date":"2017-09-04","start_date":"2017-09-02","campaign_source":"Test","manager_response":"Pending","resId":66492},{"total":594.31,"prop_name":" RA:3555 PP:1022","guest_email_phone":"NOVI(TEST) NURAINI(TEST)|dev@redawning.com|8887332964","book_date":"2017-05-26","rent_fee_tax":"400 / 78 / 116.31 ","end_date":"2017-07-24","start_date":"2017-07-21","campaign_source":"tripping.com","manager_response":"Pending","resId":52478},{"total":719.9,"prop_name":" RA:3555 PP:1022","guest_email_phone":"Arry Sone|arry.sone@gmail.com|+6289898989898","book_date":"2017-05-23","rent_fee_tax":"500 / 78 / 141.9 ","end_date":"2017-06-29","start_date":"2017-06-25","campaign_source":"RedAwning","manager_response":"Pending","resId":51980},{"total":719.9,"prop_name":" RA:3555 PP:1022","guest_email_phone":"arry sone|arry.sone@redawning.com|+62898989898989","book_date":"2017-05-23","rent_fee_tax":"500 / 78 / 141.9 ","end_date":"2017-06-29","start_date":"2017-06-25","campaign_source":"RedAwning","manager_response":"Pending","resId":51973},{"total":468.72,"prop_name":" RA:3555 PP:1022","guest_email_phone":"novi(test) nuraini(test)|dev@redawning.com|81443526271","book_date":"2017-05-05","rent_fee_tax":"300 / 78 / 90.72 ","end_date":"2017-05-14","start_date":"2017-05-12","campaign_source":"Test","manager_response":"Pending","resId":49351},{"total":1981.81,"prop_name":" RA:3555 PP:1022","guest_email_phone":"NOVI(TEST) NURAINI(TEST)|dev@redawning.com|8887332964","book_date":"2017-04-28","rent_fee_tax":"1590 / 78 / 313.81 ","end_date":"2017-10-24","start_date":"2017-10-23","campaign_source":"Booking.com","manager_response":"Pending","resId":48358},{"total":343.13,"prop_name":" RA:3555 PP:1022","guest_email_phone":"NOVI(TEST) NURAINI(TEST)|dev@redawning.com|8887332964","book_date":"2017-04-26","rent_fee_tax":"200 / 78 / 65.13 ","end_date":"2017-07-28","start_date":"2017-07-27","campaign_source":"RedAwning","manager_response":"Accepted","resId":48051},{"total":1981.81,"prop_name":" RA:3555 PP:1022","guest_email_phone":"sigit (test) ari (test)|dev@redawning.com|0859878764","book_date":"2017-04-11","rent_fee_tax":"1590 / 78 / 313.81 ","end_date":"2017-05-15","start_date":"2017-05-14","campaign_source":"RedAwning","manager_response":"Pending","resId":46169},{"total":797.9300000000001,"prop_name":"Short Name RA:69065 PP:1021","guest_email_phone":"Justin Bass|firstchoiceauto99@gmail.com|8632593290","book_date":"2017-04-07","rent_fee_tax":"497.63 / 209.83 / 90.47 ","end_date":"2017-05-28","start_date":"2017-05-26","campaign_source":"RedAwning","manager_response":"Accepted","resId":45495},{"total":162.82,"prop_name":" RA:3559 PP:","guest_email_phone":"sigit (test) ari (test)|dev@redawning.com|0859878764","book_date":"2017-03-16","rent_fee_tax":"30 / 115 / 17.82 ","end_date":"2017-09-21","start_date":"2017-09-19","campaign_source":"RedAwning","manager_response":"Pending","resId":41973},{"total":162.82,"prop_name":" RA:3559 PP:","guest_email_phone":"sigit (test) ari (test)|dev@redawning.com|0859878764","book_date":"2017-03-14","rent_fee_tax":"30 / 115 / 17.82 ","end_date":"2018-03-21","start_date":"2018-03-19","campaign_source":"RedAwning","manager_response":"Pending","resId":41784},{"total":162.82,"prop_name":" RA:3559 PP:","guest_email_phone":"sigit (test) ari (test)|dev@redawning.com|0859878764","book_date":"2017-03-14","rent_fee_tax":"30 / 115 / 17.82 ","end_date":"2017-04-13","start_date":"2017-04-11","campaign_source":"RedAwning","manager_response":"Pending","resId":41779},{"total":162.82,"prop_name":" RA:3559 PP:","guest_email_phone":"sigit (test) ari (test)|dev@redawning.com|0859878764","book_date":"2017-03-14","rent_fee_tax":"30 / 115 / 17.82 ","end_date":"2018-03-15","start_date":"2018-03-13","campaign_source":"RedAwning","manager_response":"Pending","resId":41772},{"total":1981.81,"prop_name":" RA:3555 PP:1022","guest_email_phone":"desi(TEST) TEST|dev@redawning.com|+62 857-265-5462","book_date":"2017-03-01","rent_fee_tax":"1590 / 78 / 313.81 ","end_date":"2017-08-30","start_date":"2017-08-29","campaign_source":"Test","manager_response":"Pending","resId":39746},{"total":1981.81,"prop_name":" RA:3555 PP:1022","guest_email_phone":"desi(Test) kurniasari(Test)|dev@redawning.com|085754816658","book_date":"2017-03-01","rent_fee_tax":"1590 / 78 / 313.81 ","end_date":"2017-06-29","start_date":"2017-06-28","campaign_source":"Test","manager_response":"Pending","resId":39745},{"total":207.73000000000002,"prop_name":" RA:3559 PP:","guest_email_phone":"NOVI(TEST) NURAINI(TEST)|novinuraini3@gmail.com|8887332964","book_date":"2017-02-27","rent_fee_tax":"70 / 115 / 22.73 ","end_date":"2017-07-13","start_date":"2017-07-07","campaign_source":"RedAwning","manager_response":"Pending","resId":39424},{"total":1871.82,"prop_name":" RA:3555 PP:1022","guest_email_phone":"sigit (test) ari (test)|dev@redawning.com|0859878764","book_date":"2017-02-16","rent_fee_tax":"1590 / 78 / 203.82 ","end_date":"2017-04-02","start_date":"2017-04-01","campaign_source":"RedAwning","manager_response":"Pending","resId":37853},{"total":979.47,"prop_name":" RA:3555 PP:1022","guest_email_phone":"sigit (test) ari (test)|dev@redawning.com|0859878764","book_date":"2017-02-16","rent_fee_tax":"795 / 78 / 106.47 ","end_date":"2017-03-19","start_date":"2017-03-19","campaign_source":"RedAwning","manager_response":"Pending","resId":37846},{"total":207.73000000000002,"prop_name":" RA:3559 PP:","guest_email_phone":"Hironobu Horie|mbinsulaiman@expedia.com|0-0-0123456789-","book_date":"2017-02-13","rent_fee_tax":"70 / 115 / 22.73 ","end_date":"2017-02-26","start_date":"2017-02-20","campaign_source":"ExpediaCollect","manager_response":"Pending","resId":37412},{"total":1871.82,"prop_name":" RA:3555 PP:1022","guest_email_phone":"Ali (test) Ridho(test)|ali.ridho@redawning.com|810000030","book_date":"2017-02-08","rent_fee_tax":"1590 / 78 / 203.82 ","end_date":"2017-03-05","start_date":"2017-03-04","campaign_source":"RedAwning","manager_response":"Pending","resId":36843},{"total":979.47,"prop_name":" RA:3555 PP:1022","guest_email_phone":"Ali (test Ridho(test)|ali.ridho@redawning.com|810000030","book_date":"2017-02-06","rent_fee_tax":"795 / 78 / 106.47 ","end_date":"2017-02-24","start_date":"2017-02-24","campaign_source":"Test","manager_response":"Pending","resId":36618},{"total":979.47,"prop_name":" RA:3555 PP:1022","guest_email_phone":"desi(Test) kurniasari(Test)|dev@redawning.com|085754816658","book_date":"2017-01-25","rent_fee_tax":"795 / 78 / 106.47 ","end_date":"2018-03-07","start_date":"2018-03-07","campaign_source":"Test","manager_response":"Pending","resId":35415},{"total":1648.46,"prop_name":" RA:3555 PP:1022","guest_email_phone":"Rizky(Test) Catra(Test)|dev@redawning.com|85725761939","book_date":"2017-01-19","rent_fee_tax":"1390 / 78 / 180.46 ","end_date":"2017-02-25","start_date":"2017-02-24","campaign_source":"RedAwning","manager_response":"Pending","resId":34799},{"total":777.36,"prop_name":" RA:3555 PP:1022","guest_email_phone":"Robi Test Hartanto Test|robi.hartanto@redawning.com|402-770-2480","book_date":"2017-01-18","rent_fee_tax":"610 / 78 / 89.36 ","end_date":"2020-01-20","start_date":"2020-01-19","campaign_source":"tripping","manager_response":"Pending","resId":34697},{"total":1648.46,"prop_name":" RA:3555 PP:1022","guest_email_phone":"desi(Test) kurniasari(Test)|dev@redawning.com|085754816658","book_date":"2017-01-06","rent_fee_tax":"1390 / 78 / 180.46 ","end_date":"2017-07-12","start_date":"2017-07-11","campaign_source":"Test","manager_response":"Pending","resId":33376}];
+		
+    console.log(getColumns(data));		
+    $('#export').on('click', function () {
+      	$("#export").jqueryexport({
+            exporttype: 'csv'
+            ,jsondata: data
+            ,columns: getColumns(data)     
+        });
+    });
+
+</script>
+</div>
+</body>
+</html>
